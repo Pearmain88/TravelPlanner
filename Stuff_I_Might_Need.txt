@@ -1,0 +1,13 @@
+
+-*- math thing to total all stuff -*-
+
+private void TotalAllOutings()
+        {
+            var totalOutings = _outingRepo.GetList();
+            decimal costTotal = 0;
+            foreach (var eachOuting in totalOutings)
+            {
+                costTotal += eachOuting.TotalCost;
+                Console.WriteLine(costTotal);
+            }
+        }

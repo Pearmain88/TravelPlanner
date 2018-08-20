@@ -1,0 +1,66 @@
+﻿@model TravelPlanner.Models.ItineraryDetail
+
+@{
+    ViewBag.Title = "ItineraryDetails";
+}
+
+<h2>ItineraryDetails</h2>
+
+<div>
+    <h4>ItineraryDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ItineraryID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ItineraryID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Completed)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Completed)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ActivityName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ActivityName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ActivityDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ActivityDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ActivityCost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ActivityCost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ActivityDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ActivityDate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ItineraryID}) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
