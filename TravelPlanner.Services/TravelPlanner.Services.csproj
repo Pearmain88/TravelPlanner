@@ -53,8 +53,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BudgetService.cs" />
     <Compile Include="ItineraryService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TicketService.cs" />
     <Compile Include="TripService.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -62,6 +64,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\TravelPlanner.Contracts\TravelPlanner.Contracts.csproj">
+      <Project>{0B637211-130E-469C-8B91-640E8CCD6417}</Project>
+      <Name>TravelPlanner.Contracts</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TravelPlanner.Data\TravelPlanner.Data.csproj">
       <Project>{98d8369e-9288-42e9-ab0a-56a6da9a249c}</Project>
       <Name>TravelPlanner.Data</Name>

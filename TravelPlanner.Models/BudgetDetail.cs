@@ -1,36 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TravelPlanner.Data
+namespace TravelPlanner.Models
 {
-    public class Budget
+    public class BudgetDetail
     {
-        [Key]
         public int BudgetID { get; set; }
-
-        [Required]
-        public Guid OwnerID { get; set; }
         public string BudgetTitle { get; set; }
         public decimal Transportation { get; set; }
         public decimal Lodging { get; set; }
         public decimal FoodCost { get; set; }
         public decimal Activities { get; set; }
         public decimal Souvenirs { get; set; }
-
-        private decimal totalCost;
-
-        public decimal TotalCost
-        {
-            get { return totalCost; }
-            set { totalCost = value; }
-        }
-
-
-
-
+        public override string ToString() => $"[{BudgetID}] {BudgetTitle}";
     }
 }

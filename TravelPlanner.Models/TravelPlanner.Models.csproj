@@ -53,11 +53,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BudgetCreate.cs" />
+    <Compile Include="BudgetDetail.cs" />
+    <Compile Include="BudgetEdit.cs" />
+    <Compile Include="BudgetListItem.cs" />
     <Compile Include="ItineraryEdit.cs" />
     <Compile Include="ItineraryCreate.cs" />
     <Compile Include="ItineraryDetail.cs" />
     <Compile Include="ItineraryListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TicketCreate.cs" />
+    <Compile Include="TicketDetail.cs" />
+    <Compile Include="TicketEdit.cs" />
+    <Compile Include="TicketListItem.cs" />
     <Compile Include="TripCreate.cs" />
     <Compile Include="TripDetail.cs" />
     <Compile Include="TripEdit.cs" />

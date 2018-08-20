@@ -1,0 +1,74 @@
+﻿@model TravelPlanner.Models.BudgetDetail
+
+@{
+    ViewBag.Title = "BudgetDetails";
+}
+
+<h2>BudgetDetails</h2>
+
+<div>
+    <h4>BudgetDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.BudgetID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BudgetID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BudgetTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BudgetTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Transportation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Transportation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Lodging)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Lodging)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FoodCost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FoodCost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Activities)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Activities)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Souvenirs)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Souvenirs)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

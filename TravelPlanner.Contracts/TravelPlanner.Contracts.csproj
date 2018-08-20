@@ -53,11 +53,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IBudgetService.cs" />
+    <Compile Include="IItineraryService.cs" />
+    <Compile Include="ITicketService.cs" />
+    <Compile Include="ITripService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TravelPlanner.Data\TravelPlanner.Data.csproj">
+      <Project>{98d8369e-9288-42e9-ab0a-56a6da9a249c}</Project>
+      <Name>TravelPlanner.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TravelPlanner.Models\TravelPlanner.Models.csproj">
+      <Project>{b8a25946-9b7c-4d30-8bda-8a16d928ad59}</Project>
+      <Name>TravelPlanner.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
