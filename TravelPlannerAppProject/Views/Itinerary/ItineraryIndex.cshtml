@@ -9,15 +9,6 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-@if (TempData.ContainsKey("SaveResult"))
-{
-<div class="alert alert-success fade in" role="alert">
-    @ViewBag.SaveResult
-    <button type="button" class="close" data-dismiss="alert">
-        <span>&times;</span>
-    </button>
-</div>
-}
 <table class="table">
     <tr>
         <th>
@@ -41,33 +32,32 @@
         <th></th>
     </tr>
 
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.ItineraryID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Completed)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ActivityName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ActivityDescription)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ActivityCost)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ActivityDate)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.ItineraryID }) |
-                @Html.ActionLink("Details", "Details", new { id=item.ItineraryID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.ItineraryID })
-            </td>
-        </tr>
-    }
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ItineraryID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Completed)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ActivityName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ActivityDescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ActivityCost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ActivityDate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ItineraryID }) |
+            @Html.ActionLink("Details", "Details", new { id = item.ItineraryID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.ItineraryID })
+        </td>
+    </tr>
+}
 
 </table>

@@ -1,27 +1,18 @@
-﻿@model IEnumerable<TravelPlanner.Models.TripListItem>
+﻿@model IEnumerable<TravelPlanner.Data.Trip>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "TripIndex";
 }
 
-<h2>Index</h2>
+<h2>TripIndex</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-@if (TempData.ContainsKey("SaveResult"))
-{ <div class="alert alert-success fade in" role="alert">
-        @ViewBag.SaveResult
-        <button type="button" class="close" dada-dismiss="alert">
-            <span>&times;</span>
-        </button>
-    @TempData["SaveResult"]
-    </div>
-}
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.TripID)
+            @Html.DisplayNameFor(model => model.OwnerID)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.TripName)
@@ -38,7 +29,7 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.TripID)
+            @Html.DisplayFor(modelItem => item.OwnerID)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.TripName)
@@ -52,7 +43,7 @@
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.TripID }) |
             @Html.ActionLink("Details", "Details", new { id=item.TripID }) |
-            @Html.ActionLink("Delete", "Delete", new {  id=item.TripID })
+            @Html.ActionLink("Delete", "Delete", new { id=item.TripID })
         </td>
     </tr>
 }

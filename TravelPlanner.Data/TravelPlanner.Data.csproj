@@ -55,6 +55,15 @@
   <ItemGroup>
     <Compile Include="Budget.cs" />
     <Compile Include="Itinerary.cs" />
+    <Compile Include="Migrations\201808211823180_InitialCreate.cs" />
+    <Compile Include="Migrations\201808211823180_InitialCreate.Designer.cs">
+      <DependentUpon>201808211823180_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808211937063_first.cs" />
+    <Compile Include="Migrations\201808211937063_first.Designer.cs">
+      <DependentUpon>201808211937063_first.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Ticket.cs" />
     <Compile Include="Trip.cs" />
     <Compile Include="IdentityModels.cs" />
@@ -63,6 +72,14 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201808211823180_InitialCreate.resx">
+      <DependentUpon>201808211823180_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808211937063_first.resx">
+      <DependentUpon>201808211937063_first.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

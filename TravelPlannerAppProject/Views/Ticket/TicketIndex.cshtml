@@ -1,0 +1,57 @@
+﻿@model IEnumerable<TravelPlanner.Models.TicketListItem>
+
+@{
+    ViewBag.Title = "TicketIndex";
+}
+
+<h2>TicketIndex</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TicketID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Identification)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TravelTickets)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ActivityTickets)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Receipts)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TicketID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Identification)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TravelTickets)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ActivityTickets)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Receipts)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.TicketID }) |
+            @Html.ActionLink("Details", "Details", new { id = item.TicketID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.TicketID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -24,10 +24,10 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     @if (User.Identity.IsAuthenticated)
                     {
-                    <li>@Html.ActionLink("myTrips", "Index", "Trip")</li>
-                    <li>@Html.ActionLink("myBudget", "Index", "Budget")</li>
-                    <li>@Html.ActionLink("myItinerary", "Index", "Itinerary")</li>
-                    <li>@Html.ActionLink("myTickets", "Index", "Ticket")</li>
+                    <li>@Html.ActionLink("myTrips", "TripIndex", "Trip")</li>
+                    <li>@Html.ActionLink("myBudget", "BudgetIndex", "Budget")</li>
+                    <li>@Html.ActionLink("myItinerary", "ItineraryIndex", "Itinerary")</li>
+                    <li>@Html.ActionLink("myTickets", "TicketIndex", "Ticket")</li>
                     }
                 </ul>
                 @Html.Partial("_LoginPartial")

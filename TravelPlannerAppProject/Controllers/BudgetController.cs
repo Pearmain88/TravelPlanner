@@ -13,20 +13,20 @@ namespace TravelPlannerAppProject.Controllers
     public class BudgetController : Controller
     {
         // GET: Budget
-        public ActionResult Index()
+        public ActionResult BudgetIndex()
         {
             var model = new BudgetListItem[0];
             return View(model);
         }
 
-        public ActionResult Create()
+        public ActionResult BudgetCreate()
         {
             return View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(BudgetCreate model)
+        public ActionResult BudgetCreate(BudgetCreate model)
         {
             if (!ModelState.IsValid) return View(model);
 

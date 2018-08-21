@@ -21,14 +21,14 @@ namespace TravelPlannerAppProject.Controllers
             return View();
         }
 
-        public ActionResult Create()
+        public ActionResult ItineraryCreate()
         {
             return View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(ItineraryCreate model)
+        public ActionResult ItineraryCreate(ItineraryCreate model)
         {
             if (!ModelState.IsValid) return View(model);
             

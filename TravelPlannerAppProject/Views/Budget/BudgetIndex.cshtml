@@ -1,10 +1,10 @@
-﻿@model IEnumerable<TravelPlanner.Models.BudgetListItem>
+﻿@model IEnumerable<TravelPlanner.Models.BudgetDetail>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "BudgetIndex";
 }
 
-<h2>Index</h2>
+<h2>BudgetIndex</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -13,6 +13,9 @@
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.BudgetID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BudgetTitle)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Transportation)
@@ -29,9 +32,6 @@
         <th>
             @Html.DisplayNameFor(model => model.Souvenirs)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TotalCost)
-        </th>
         <th></th>
     </tr>
 
@@ -39,6 +39,9 @@
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.BudgetID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BudgetTitle)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Transportation)
@@ -56,12 +59,9 @@
             @Html.DisplayFor(modelItem => item.Souvenirs)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.TotalCost)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            @Html.ActionLink("Edit", "Edit", new { id=item.BudgetID }) |
+            @Html.ActionLink("Details", "Details", new { id = item.BudgetID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.BudgetID })
         </td>
     </tr>
 }

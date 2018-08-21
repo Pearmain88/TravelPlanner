@@ -13,7 +13,7 @@ namespace TravelPlannerAppProject.Controllers
     public class TripController : Controller
     {
         // GET: Trip
-        public ActionResult Index()
+        public ActionResult TripIndex()
         {
             var userID = Guid.Parse(User.Identity.GetUserId());
             var service = new TripService(userID);
@@ -23,14 +23,14 @@ namespace TravelPlannerAppProject.Controllers
         }
 
         //Gets the View For Create, need to make a view and a model for the view
-        public ActionResult Create()
+        public ActionResult TripCreate()
         {
             return View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(TripCreate model)
+        public ActionResult TripCreate(TripCreate model)
         {
             if (ModelState.IsValid) { return View(model); }
 
@@ -47,14 +47,14 @@ namespace TravelPlannerAppProject.Controllers
             return View(model);
         }
 
-        public ActionResult Details(int id)
+        public ActionResult TripDetails(int id)
         {
             var svc = CreateTripService();
             var model = svc.GetTripById(id);
             return View(model);
         }
 
-        public ActionResult Edit(int id)
+        public ActionResult TripEdit(int id)
         {
             var service = CreateTripService();
             var detail = service.GetTripById(id);
@@ -71,7 +71,7 @@ namespace TravelPlannerAppProject.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, TripEdit model)
+        public ActionResult TripEdit(int id, TripEdit model)
         {
             if (!ModelState.IsValid) return View(model);
 
@@ -94,7 +94,7 @@ namespace TravelPlannerAppProject.Controllers
         }
 
         [ActionName("Delete")]
-        public ActionResult Delete(int id)
+        public ActionResult TripDelete(int id)
         {
             var svc = CreateTripService();
             var model = svc.GetTripById(id);
@@ -104,7 +104,7 @@ namespace TravelPlannerAppProject.Controllers
         [HttpPost]
         [ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeletePost(int id)
+        public ActionResult TripDeletePost(int id)
         {
             var service = CreateTripService();
 

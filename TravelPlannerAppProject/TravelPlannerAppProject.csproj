@@ -302,12 +302,12 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\Shared\DisplayTemplates\DateTimeOffset.cshtml" />
     <Content Include="Views\Trip\TripIndex.cshtml" />
     <Content Include="Views\Trip\TripCreate.cshtml" />
     <Content Include="Views\Trip\TripDetails.cshtml" />
     <Content Include="Views\Trip\TripEdit.cshtml" />
     <Content Include="Views\Trip\TripDelete.cshtml" />
-    <Content Include="Views\Shared\DisplayTemplates\DateTimeOffset.cshtml" />
     <Content Include="Views\Itinerary\ItineraryIndex.cshtml" />
     <Content Include="Views\Itinerary\ItineraryCreate.cshtml" />
     <Content Include="Views\Itinerary\ItineraryDetails.cshtml" />
@@ -318,10 +318,14 @@
     <Content Include="Views\Budget\BudgetDetails.cshtml" />
     <Content Include="Views\Budget\BudgetEdit.cshtml" />
     <Content Include="Views\Budget\BudgetDelete.cshtml" />
+    <Content Include="Views\Ticket\TicketIndex.cshtml" />
+    <Content Include="Views\Ticket\TicketCreate.cshtml" />
+    <Content Include="Views\Ticket\TicketDetails.cshtml" />
+    <Content Include="Views\Ticket\TicketEdit.cshtml" />
+    <Content Include="Views\Ticket\TicketDelete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Ticket\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

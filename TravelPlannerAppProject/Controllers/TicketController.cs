@@ -13,7 +13,7 @@ namespace TravelPlannerAppProject.Controllers
     public class TicketController : Controller
     {
         // GET: Ticket
-        public ActionResult Index()
+        public ActionResult TicketIndex()
         {
             var userID = Guid.Parse(User.Identity.GetUserId());
             var service = new TicketService(userID);
@@ -22,14 +22,14 @@ namespace TravelPlannerAppProject.Controllers
             return View(model);
         }
 
-        public ActionResult Create()
+        public ActionResult TicketCreate()
         {
             return View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(TicketCreate model)
+        public ActionResult TicketCreate(TicketCreate model)
         {
             if (ModelState.IsValid) { return View(model); }
 
@@ -46,14 +46,14 @@ namespace TravelPlannerAppProject.Controllers
             return View(model);
         }
 
-        public ActionResult Details(int id)
+        public ActionResult TicketDetails(int id)
         {
             var service = CreateTicketService();
             var model = service.GetTicketById(id);
             return View(model);
         }
 
-        public ActionResult Edit(int id)
+        public ActionResult TicketEdit(int id)
         {
             var service = CreateTicketService();
             var detail = service.GetTicketById(id);
@@ -72,7 +72,7 @@ namespace TravelPlannerAppProject.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, TicketEdit model)
+        public ActionResult TicketEdit(int id, TicketEdit model)
         {
             if (!ModelState.IsValid) return View(model);
 
@@ -95,7 +95,7 @@ namespace TravelPlannerAppProject.Controllers
         }
 
         [ActionName("Delete")]
-        public ActionResult Delete(int id)
+        public ActionResult TicketDelete(int id)
         {
             var svc = CreateTicketService();
             var model = svc.GetTicketById(id);

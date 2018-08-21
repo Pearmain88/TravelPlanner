@@ -16,6 +16,6 @@ namespace TravelPlanner.Models
         public string Receipts { get; set; }
 
         public override string ToString() => TicketTitle;
-        }
+        
     }
 }
