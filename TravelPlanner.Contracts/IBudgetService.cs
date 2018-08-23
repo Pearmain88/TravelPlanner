@@ -7,7 +7,7 @@ using TravelPlanner.Models;
 
 namespace TravelPlanner.Contracts
 {
-    interface IBudgetService
+    public interface IBudgetService
     {
         bool CreateBudget(BudgetCreate model);
         BudgetDetail GetBudgetByID(int budgetID);

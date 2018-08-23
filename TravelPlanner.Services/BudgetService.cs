@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TravelPlanner.Contracts;
 using TravelPlanner.Data;
 using TravelPlanner.Models;
 using TravelPlannerAppProject.Models;
 
 namespace TravelPlanner.Services
 {
-    public class BudgetService
+    public class BudgetService : IBudgetService
     {
         //--THIS DOES NOT GO IN CONTRACTS
         private readonly Guid _userID;

@@ -1,13 +1,13 @@
 ﻿@model TravelPlanner.Models.TicketDetail
 
 @{
-    ViewBag.Title = "TicketDetails";
+    ViewBag.Title = "Details";
 }
 
 <h2>TicketDetails</h2>
 
 <div>
-    <h4>TicketDetail</h4>
+    <h4>myTickets Details</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -62,5 +62,5 @@
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.TicketID }) |
-    @Html.ActionLink("Back to List", "TicketIndex")
+    @Html.ActionLink("Back to List", "Index")
 </p>

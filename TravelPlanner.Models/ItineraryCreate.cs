@@ -9,6 +9,7 @@ namespace TravelPlanner.Models
 {
     public class ItineraryCreate
     {
+        public int ItineraryID { get; set; }
         [Required]
         [MinLength(1, ErrorMessage ="Please name this activity.")]
         [MaxLength(100, ErrorMessage ="Thats a little too long.")]

@@ -13,55 +13,51 @@ namespace TravelPlannerAppProject.Controllers
     public class TripController : Controller
     {
         // GET: Trip
-        public ActionResult TripIndex()
+        public ActionResult Index()
         {
             var userID = Guid.Parse(User.Identity.GetUserId());
             var service = new TripService(userID);
-            var model = new TripListItem[0];
-
+            var model = service.GetTrips();
             return View(model);
         }
 
         //Gets the View For Create, need to make a view and a model for the view
-        public ActionResult TripCreate()
+        public ActionResult Create()
         {
             return View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult TripCreate(TripCreate model)
+        public ActionResult Create(TripCreate model)
         {
-            if (ModelState.IsValid) { return View(model); }
+            if (ModelState.IsValid)  return View(model); 
 
-            TripService service = CreateTripService();
+            var service = CreateService();
 
             if (service.CreateTrip(model))
             {
                 TempData["SaveResult"] = "Your trip has been saved.";
                 return RedirectToAction("Index");
             };
-
             ModelState.AddModelError("", "Trip could not be created.");
-
             return View(model);
         }
 
-        public ActionResult TripDetails(int id)
+        public ActionResult Details(int id)
         {
-            var svc = CreateTripService();
+            var svc = CreateService();
             var model = svc.GetTripById(id);
             return View(model);
         }
 
-        public ActionResult TripEdit(int id)
+        public ActionResult Edit(int id)
         {
-            var service = CreateTripService();
+            var service = CreateService();
             var detail = service.GetTripById(id);
             var model =
                 new TripEdit
-                {
-                    TripID = detail.TripID,
+                {                    
                     TripName = detail.TripName,
                     DepartDate = detail.DepartDate,
                     Returndate = detail.ReturnDate
@@ -71,7 +67,7 @@ namespace TravelPlannerAppProject.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult TripEdit(int id, TripEdit model)
+        public ActionResult Edit(int id, TripEdit model)
         {
             if (!ModelState.IsValid) return View(model);
 
@@ -81,7 +77,7 @@ namespace TravelPlannerAppProject.Controllers
                 return View(model);
             }
 
-            var service = CreateTripService();
+            var service = CreateService();
 
             if (service.UpdateTrip(model))
             {
@@ -94,9 +90,9 @@ namespace TravelPlannerAppProject.Controllers
         }
 
         [ActionName("Delete")]
-        public ActionResult TripDelete(int id)
+        public ActionResult Delete(int id)
         {
-            var svc = CreateTripService();
+            var svc = CreateService();
             var model = svc.GetTripById(id);
             return View(model);
         }
@@ -104,18 +100,15 @@ namespace TravelPlannerAppProject.Controllers
         [HttpPost]
         [ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult TripDeletePost(int id)
+        public ActionResult TripPost(int id)
         {
-            var service = CreateTripService();
-
+            var service = CreateService();
             service.DeleteTrip(id);
-
             TempData["SaveResult"] = "Your trip has been deleted.";
-
             return RedirectToAction("Index");
         }
 
-        private TripService CreateTripService()
+        private TripService CreateService()
         {
             var userID = Guid.Parse(User.Identity.GetUserId());
             var service = new TripService(userID);

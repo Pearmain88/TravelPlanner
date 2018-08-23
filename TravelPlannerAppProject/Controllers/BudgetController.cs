@@ -13,24 +13,24 @@ namespace TravelPlannerAppProject.Controllers
     public class BudgetController : Controller
     {
         // GET: Budget
-        public ActionResult BudgetIndex()
+        public ActionResult Index()
         {
             var model = new BudgetListItem[0];
             return View(model);
         }
 
-        public ActionResult BudgetCreate()
+        public ActionResult Create()
         {
             return View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult BudgetCreate(BudgetCreate model)
+        public ActionResult Create(BudgetCreate model)
         {
             if (!ModelState.IsValid) return View(model);
 
-            var service = CreateBudgetService();
+            var service = CreateService();
 
             if (service.CreateBudget(model))
             {
@@ -41,28 +41,27 @@ namespace TravelPlannerAppProject.Controllers
             return View(model);
         }
 
-        private BudgetService CreateBudgetService()
+        private BudgetService CreateService()
         {
             var userID = Guid.Parse(User.Identity.GetUserId());
             var service = new BudgetService(userID);
             return service;
         }
 
-        public ActionResult BudgetDetails(int id)
+        public ActionResult Details(int id)
         {
-            var service = CreateBudgetService();
+            var service = CreateService();
             var model = service.GetBudgetByID(id);
             return View(model);
         }
 
         public ActionResult BudgetEdit(int id)
         {
-            var service = CreateBudgetService();
+            var service = CreateService();
             var detail = service.GetBudgetByID(id);
             var model =
                 new BudgetEdit
-                {
-                    BudgetID = detail.BudgetID,
+                {                    
                     BudgetTitle = detail.BudgetTitle,
                     Transportation = detail.Transportation,
                     Lodging = detail.Lodging,
@@ -75,7 +74,7 @@ namespace TravelPlannerAppProject.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult BudgetEdit(int id, BudgetEdit model)
+        public ActionResult Edit(int id, BudgetEdit model)
         {
             if (!ModelState.IsValid) return View(model);
 
@@ -85,7 +84,7 @@ namespace TravelPlannerAppProject.Controllers
                 return View(model);
             }
 
-            var service = CreateBudgetService();
+            var service = CreateService();
 
             if (service.UpdateBudget(model))
             {
@@ -97,9 +96,9 @@ namespace TravelPlannerAppProject.Controllers
             return View(model);
         }
 
-        public ActionResult BudgetDelete(int id)
+        public ActionResult Delete(int id)
         {
-            var service = CreateBudgetService();
+            var service = CreateService();
             var model = service.GetBudgetByID(id);
             return View(model);
         }
@@ -107,9 +106,9 @@ namespace TravelPlannerAppProject.Controllers
         [HttpPost]
         [ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult BudgetDeletePost(int id)
+        public ActionResult DeletePost(int id)
         {
-            var service = CreateBudgetService();
+            var service = CreateService();
             service.DeleteBudget(id);
             TempData["SaveResult"] = "your budget item has been deleted.";
             return RedirectToAction("Index");

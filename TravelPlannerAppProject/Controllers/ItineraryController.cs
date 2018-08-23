@@ -13,26 +13,26 @@ namespace TravelPlannerAppProject.Controllers
     public class ItineraryController : Controller
     {
         // GET: Itinerary
-        public ActionResult ItineraryIndex()
+        public ActionResult Index()
         {
             var userID = Guid.Parse(User.Identity.GetUserId());
             var service = new ItineraryService(userID);
             var model = service.GetItineraries();
-            return View();
+            return View(model);
         }
 
-        public ActionResult ItineraryCreate()
+        public ActionResult Create()
         {
             return View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult ItineraryCreate(ItineraryCreate model)
+        public ActionResult Create(ItineraryCreate model)
         {
             if (!ModelState.IsValid) return View(model);
             
-            var service = CreateItineraryService();
+            var service = CreateService();
 
             if (service.CreateItinerary(model))
             {
@@ -43,28 +43,28 @@ namespace TravelPlannerAppProject.Controllers
             return View(model);
         }
 
-        private ItineraryService CreateItineraryService()
+        private ItineraryService CreateService()
         {
             var userID = Guid.Parse(User.Identity.GetUserId());
             var service = new ItineraryService(userID);
             return service;
         }
 
-        public ActionResult ItineraryDetails(int id)
+        public ActionResult Details(int id)
         {
-            var service = CreateItineraryService();
+            var service = CreateService();
             var model = service.GetItineraryByID(id);
             return View(model);
         }
 
-        public ActionResult ItineraryEdit(int id)
+        public ActionResult Edit(int id)
         {
-            var service = CreateItineraryService();
+            var service = CreateService();
             var detail = service.GetItineraryByID(id);
             var model =
                 new ItineraryEdit
                 {
-                    ItineraryID = detail.ItineraryID,
+                    ItineraryID = detail.ItineraryID,                 
                     ActivityName = detail.ActivityName,
                     Completed = detail.Completed,
                     ActivityDescription = detail.ActivityDescription,
@@ -76,17 +76,17 @@ namespace TravelPlannerAppProject.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult ItineraryEdit(int id, ItineraryEdit model)
+        public ActionResult Edit(int id, ItineraryEdit model)
         {
             if (!ModelState.IsValid) return View(model);
 
-            if(model.ItineraryID != id)
+            if (model.ItineraryID != id)
             {
                 ModelState.AddModelError("", "Id Mismatch");
                 return View(model);
             }
 
-            var service = CreateItineraryService();
+            var service = CreateService();
 
             if(service.UpdateItinerary(model))
             {
@@ -98,9 +98,9 @@ namespace TravelPlannerAppProject.Controllers
             return View(model);
         }
 
-        public ActionResult ItineraryDelete(int id)
+        public ActionResult Delete(int id)
         {
-            var service = CreateItineraryService();
+            var service = CreateService();
             var model = service.GetItineraryByID(id);
             return View(model);
         }
@@ -108,9 +108,9 @@ namespace TravelPlannerAppProject.Controllers
         [HttpPost]
         [ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult ItineraryDeletePost(int id)
+        public ActionResult DeletePost(int id)
         {
-            var service = CreateItineraryService();
+            var service = CreateService();
             service.DeleteItinerary(id);
             TempData["SaveResult"] = "Your activity has been deleted.";
             return RedirectToAction("Index");

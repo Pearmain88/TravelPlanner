@@ -17,9 +17,7 @@ namespace TravelPlanner.Services
         //--THIS DOES NOT GO IN CONTRACTS
         public ItineraryService(Guid userID)
         {
-
-            _userID = userID;
-            
+            _userID = userID;            
         }
         //--THE REST OF THESE GO IN CONTRACTS
         public bool CreateItinerary(ItineraryCreate model)
@@ -28,6 +26,7 @@ namespace TravelPlanner.Services
                 new Itinerary()
                 {
                     OwnerID = _userID,
+                    ItineraryID = model.ItineraryID,
                     ActivityName = model.ActivityName,
                     ActivityDescription = model.ActivityDescription,
                     ActivityCost = model.ActivityCost,
@@ -94,6 +93,7 @@ namespace TravelPlanner.Services
                         .Itineraries
                         .Single(e => e.ItineraryID == model.ItineraryID && e.OwnerID == _userID);
 
+                entity.ItineraryID = model.ItineraryID;
                 entity.ActivityName = model.ActivityName;
                 entity.Completed = model.Completed;
                 entity.ActivityDescription = model.ActivityDescription;

@@ -15,7 +15,5 @@ namespace TravelPlanner.Contracts
         IEnumerable<TripListItem> GetTrips();
         bool UpdateTrip(TripEdit model);
         bool DeleteTrip(int tripID);
-
-
     }
 }
