@@ -43,13 +43,6 @@ namespace TravelPlannerAppProject.Controllers
             return View(model);
         }
 
-        private ItineraryService CreateService()
-        {
-            var userID = Guid.Parse(User.Identity.GetUserId());
-            var service = new ItineraryService(userID);
-            return service;
-        }
-
         public ActionResult Details(int id)
         {
             var service = CreateService();
@@ -114,6 +107,13 @@ namespace TravelPlannerAppProject.Controllers
             service.DeleteItinerary(id);
             TempData["SaveResult"] = "Your activity has been deleted.";
             return RedirectToAction("Index");
+        }
+
+        private ItineraryService CreateService()
+        {
+            var userID = Guid.Parse(User.Identity.GetUserId());
+            var service = new ItineraryService(userID);
+            return service;
         }
     }
 }

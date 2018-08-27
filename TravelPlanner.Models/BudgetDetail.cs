@@ -15,6 +15,9 @@ namespace TravelPlanner.Models
         public decimal FoodCost { get; set; }
         public decimal Activities { get; set; }
         public decimal Souvenirs { get; set; }
-        public override string ToString() => $"[{BudgetID}] {BudgetTitle}";
+        public override string ToString()
+        {
+            return base.ToString();
+        }
     }
 }

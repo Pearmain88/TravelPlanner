@@ -17,8 +17,7 @@ namespace TravelPlannerAppProject.Controllers
         {
             var userID = Guid.Parse(User.Identity.GetUserId());
             var service = new TicketService(userID);
-            var model = new TicketListItem[0];
-
+            var model = service.GetTickets();
             return View(model);
         }
 
@@ -31,7 +30,7 @@ namespace TravelPlannerAppProject.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(TicketCreate model)
         {
-            if (ModelState.IsValid) { return View(model); }
+            if (!ModelState.IsValid) { return View(model); }
 
             TicketService service = CreateService();
 

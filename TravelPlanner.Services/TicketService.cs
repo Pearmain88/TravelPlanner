@@ -38,18 +38,6 @@ namespace TravelPlanner.Services
             }
         }
 
-        public bool DeleteTicket(int ticketID)
-        {
-            using (var ctx = new ApplicationDbContext())
-            {
-                var entity =
-                    ctx
-                        .Tickets
-                        .Single(e => e.TicketID == ticketID && e.OwnerID == _userID);
-                ctx.Tickets.Remove(entity);
-                return ctx.SaveChanges() == 1;
-            }
-        }
 
         public TicketDetail GetTicketById(int ticketID)
         {
@@ -103,12 +91,27 @@ namespace TravelPlanner.Services
                     ctx
                         .Tickets
                         .Single(e => e.TicketID == model.TicketID && e.OwnerID == _userID);
+
+                entity.TicketID = model.TicketID;
                 entity.TicketTitle = model.TicketTitle;
                 entity.Identification = model.Identification;
                 entity.TravelTickets = model.TravelTickets;
                 entity.ActivityTickets = model.ActivityTickets;
                 entity.Receipts = model.Receipts;
 
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
+        public bool DeleteTicket(int ticketID)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Tickets
+                        .Single(e => e.TicketID == ticketID && e.OwnerID == _userID);
+                ctx.Tickets.Remove(entity);
                 return ctx.SaveChanges() == 1;
             }
         }

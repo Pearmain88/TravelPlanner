@@ -28,7 +28,13 @@ namespace TravelPlanner.Services
                 new Budget()
                 {
                     OwnerID = _userID,
-                    
+                    BudgetID = model.BudgetID,
+                    Activities = model.Activities,
+                    FoodCost = model.FoodCost,
+                    Souvenirs = model.Souvenirs,
+                    BudgetTitle = model.BudgetTitle,
+                    Lodging = model.Lodging,
+                    Transportation = model.Transportation                                        
                 };
             using (var ctx = new ApplicationDbContext())
             {

@@ -9,6 +9,8 @@ namespace TravelPlanner.Models
 {
     public class BudgetCreate
     {
+        public int BudgetID { get; set; }
+
         [Required]
         [Display(Name ="What I'm Planning For: \n" +
             "(ie: My First Trip To Rome)")]

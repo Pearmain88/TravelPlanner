@@ -92,8 +92,7 @@ namespace TravelPlanner.Services
                     ctx
                         .Itineraries
                         .Single(e => e.ItineraryID == model.ItineraryID && e.OwnerID == _userID);
-
-                entity.ItineraryID = model.ItineraryID;
+                                
                 entity.ActivityName = model.ActivityName;
                 entity.Completed = model.Completed;
                 entity.ActivityDescription = model.ActivityDescription;

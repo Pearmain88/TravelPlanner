@@ -11,8 +11,13 @@ namespace TravelPlanner.Data
     {
         [Key]
         public int TicketID { get; set; }
+
+        [Required]
         public Guid OwnerID { get; set; }
+
+        [Required]
         public string TicketTitle { get; set; }
+
         public string Identification { get; set; }
         public string TravelTickets { get; set; }
         public string ActivityTickets { get; set; }

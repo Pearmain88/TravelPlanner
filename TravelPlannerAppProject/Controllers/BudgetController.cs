@@ -15,7 +15,9 @@ namespace TravelPlannerAppProject.Controllers
         // GET: Budget
         public ActionResult Index()
         {
-            var model = new BudgetListItem[0];
+            var userID = Guid.Parse(User.Identity.GetUserId());
+            var service = new BudgetService(userID);
+            var model = service.GetBudgets();
             return View(model);
         }
 
@@ -55,20 +57,22 @@ namespace TravelPlannerAppProject.Controllers
             return View(model);
         }
 
-        public ActionResult BudgetEdit(int id)
+        public ActionResult Edit(int id)
         {
             var service = CreateService();
             var detail = service.GetBudgetByID(id);
             var model =
                 new BudgetEdit
-                {                    
+                {
+                    BudgetID = detail.BudgetID,
                     BudgetTitle = detail.BudgetTitle,
-                    Transportation = detail.Transportation,
-                    Lodging = detail.Lodging,
-                    FoodCost = detail.FoodCost,
                     Activities = detail.Activities,
+                    FoodCost = detail.FoodCost,
+                    Lodging = detail.Lodging,
                     Souvenirs = detail.Souvenirs
                 };
+            
+        
             return View(model);
         }
 

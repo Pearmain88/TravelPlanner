@@ -31,7 +31,7 @@ namespace TravelPlannerAppProject.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(TripCreate model)
         {
-            if (ModelState.IsValid)  return View(model); 
+            if (!ModelState.IsValid)  return View(model); 
 
             var service = CreateService();
 
@@ -57,7 +57,8 @@ namespace TravelPlannerAppProject.Controllers
             var detail = service.GetTripById(id);
             var model =
                 new TripEdit
-                {                    
+                {
+                    TripID = detail.TripID,
                     TripName = detail.TripName,
                     DepartDate = detail.DepartDate,
                     Returndate = detail.ReturnDate
