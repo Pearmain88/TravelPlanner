@@ -67,6 +67,10 @@
     <Compile Include="Migrations\201808271704464_new.Designer.cs">
       <DependentUpon>201808271704464_new.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201808281454029_new itin item.cs" />
+    <Compile Include="Migrations\201808281454029_new itin item.Designer.cs">
+      <DependentUpon>201808281454029_new itin item.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Ticket.cs" />
     <Compile Include="Trip.cs" />
@@ -86,6 +90,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201808271704464_new.resx">
       <DependentUpon>201808271704464_new.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808281454029_new itin item.resx">
+      <DependentUpon>201808281454029_new itin item.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

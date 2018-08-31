@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TravelPlanner.Data;
 
 namespace TravelPlanner.Models
 {
@@ -12,6 +13,8 @@ namespace TravelPlanner.Models
         public int ItineraryID { get; set; }
 
         public bool Completed { get; set; }
+
+        public ActivityType Type { get; set; }
 
         public string ActivityName { get; set; }
 

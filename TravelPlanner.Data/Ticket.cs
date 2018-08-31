@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 
 namespace TravelPlanner.Data
 {
+    public enum TicketType { Identification, TravelTickets, Activity, Receipts }
+
     public class Ticket
     {
         [Key]

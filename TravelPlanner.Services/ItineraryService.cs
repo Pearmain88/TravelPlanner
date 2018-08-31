@@ -29,6 +29,7 @@ namespace TravelPlanner.Services
                     ItineraryID = model.ItineraryID,
                     ActivityName = model.ActivityName,
                     ActivityDescription = model.ActivityDescription,
+                    Type = model.Type,
                     ActivityCost = model.ActivityCost,
                     ActivityDate = model.ActivityDate
                 };
@@ -54,6 +55,7 @@ namespace TravelPlanner.Services
                         Completed = entity.Completed,
                         ActivityName = entity.ActivityName,
                         ActivityDescription = entity.ActivityDescription,
+                        Type = entity.Type,
                         ActivityCost = entity.ActivityCost,
                         ActivityDate = entity.ActivityDate
                     };
@@ -75,6 +77,7 @@ namespace TravelPlanner.Services
                                     ItineraryID = e.ItineraryID,
                                     ActivityName = e.ActivityName,
                                     Completed = e.Completed,
+                                    Type = e.Type,
                                     ActivityDescription = e.ActivityDescription,
                                     ActivityCost = e.ActivityCost,
                                     ActivityDate = e.ActivityDate
@@ -95,6 +98,7 @@ namespace TravelPlanner.Services
                                 
                 entity.ActivityName = model.ActivityName;
                 entity.Completed = model.Completed;
+                entity.Type = model.Type;
                 entity.ActivityDescription = model.ActivityDescription;
                 entity.ActivityCost = model.ActivityCost;
                 entity.ActivityDate = model.ActivityDate;

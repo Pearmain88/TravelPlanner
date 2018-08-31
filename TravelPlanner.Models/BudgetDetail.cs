@@ -15,6 +15,16 @@ namespace TravelPlanner.Models
         public decimal FoodCost { get; set; }
         public decimal Activities { get; set; }
         public decimal Souvenirs { get; set; }
+
+        private decimal totalCost;
+
+        public decimal TotalCost
+        {
+            get { return totalCost; }
+            set { totalCost = Transportation + Lodging + FoodCost + Activities + Souvenirs; }
+        }
+
+
         public override string ToString()
         {
             return base.ToString();

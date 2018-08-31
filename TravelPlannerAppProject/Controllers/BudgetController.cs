@@ -47,6 +47,7 @@ namespace TravelPlannerAppProject.Controllers
         {
             var userID = Guid.Parse(User.Identity.GetUserId());
             var service = new BudgetService(userID);
+
             return service;
         }
 
@@ -66,6 +67,7 @@ namespace TravelPlannerAppProject.Controllers
                 {
                     BudgetID = detail.BudgetID,
                     BudgetTitle = detail.BudgetTitle,
+                    Transportation = detail.Transportation,
                     Activities = detail.Activities,
                     FoodCost = detail.FoodCost,
                     Lodging = detail.Lodging,

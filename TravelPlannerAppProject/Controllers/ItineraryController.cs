@@ -60,6 +60,7 @@ namespace TravelPlannerAppProject.Controllers
                     ItineraryID = detail.ItineraryID,                 
                     ActivityName = detail.ActivityName,
                     Completed = detail.Completed,
+                    Type = detail.Type,
                     ActivityDescription = detail.ActivityDescription,
                     ActivityCost = detail.ActivityCost,
                     ActivityDate = detail.ActivityDate

@@ -60,7 +60,8 @@ namespace TravelPlanner.Services
                         Lodging = entity.Lodging,
                         FoodCost = entity.FoodCost,
                         Activities = entity.Activities,
-                        Souvenirs = entity.Souvenirs
+                        Souvenirs = entity.Souvenirs,
+                        TotalCost = entity.TotalCost
                     };
             }
         }

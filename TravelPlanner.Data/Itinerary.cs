@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 
 namespace TravelPlanner.Data
 {
+    public enum ActivityType { Tour = 1, Dining, Attraction, Park, Landmark, Museum, Other }
+
     public class Itinerary
     {
         [Key]
@@ -19,6 +21,9 @@ namespace TravelPlanner.Data
 
         [Required]        
         public string ActivityName { get; set; }
+
+        [Required]
+        public ActivityType Type { get; set; }
 
         [Required]
         public string ActivityDescription { get; set; }

@@ -30,7 +30,13 @@ namespace TravelPlanner.Models
         public decimal Souvenirs { get; set; }
 
         [Display(Name = "Aaaand the Grand Total is...:")]
-        public decimal TotalCost { get; set; }
+        private decimal totalCost;
+
+        public decimal TotalCost
+        {
+            get { return totalCost; }
+            set { totalCost = Transportation + Lodging + FoodCost + Activities + Souvenirs; }
+        }
 
         public override string ToString()
         {

@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TravelPlanner.Data;
 
 namespace TravelPlanner.Models
 {
@@ -18,6 +19,8 @@ namespace TravelPlanner.Models
 
         [Display(Name ="What's going to happen:")]
         public string ActivityDescription { get; set; }
+
+        public ActivityType Type { get; set; }
 
         [Display(Name ="How much:")]
         public decimal? ActivityCost { get; set; }

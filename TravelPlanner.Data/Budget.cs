@@ -21,6 +21,8 @@ namespace TravelPlanner.Data
         public decimal Activities { get; set; }
         public decimal Souvenirs { get; set; }
 
+        public ICollection<Itinerary> Itinerary { get; set; }
+
         private decimal totalCost;
 
         public decimal TotalCost
