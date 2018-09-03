@@ -12,10 +12,13 @@ namespace TravelPlanner.Models
         [Required]
         [MinLength(1, ErrorMessage ="Please Name Your Trip.")]
         [MaxLength(100, ErrorMessage ="That's A Little Too Long.")]
+        [Display(Name ="Place I'm Going:")]
         public string TripName { get; set; }
 
+        [Display(Name ="Departure Date:")]
         public DateTimeOffset? DepartDate { get; set; }
 
+        [Display(Name ="Return Date:")]
         public DateTimeOffset? ReturnDate { get; set; }
 
         public override string ToString() => TripName;

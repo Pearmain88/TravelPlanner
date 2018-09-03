@@ -14,22 +14,22 @@ namespace TravelPlanner.Models
         [Display(Name ="What I'm planning for:")]
         public string BudgetTitle { get; set; }
 
-        [Display(Name = "How much for how I'm getting there:")]
+        [Display(Name = "Travel Cost:")]
         public decimal Transportation { get; set; }
 
-        [Display(Name = "How much for where I'm sleeping:")]
+        [Display(Name = "Lodging Cost:")]
         public decimal Lodging { get; set; }
 
-        [Display(Name = "How much for what I'm eating:")]
+        [Display(Name = "Food Cost:")]
         public decimal FoodCost { get; set; }
 
-        [Display(Name = "How much for Activities and Tours:")]
+        [Display(Name = "Activity Cost:")]
         public decimal Activities { get; set; }
 
-        [Display(Name = "How much on Gifts and Souvenirs:")]
+        [Display(Name = "Other Cost:")]
         public decimal Souvenirs { get; set; }
 
-        [Display(Name = "Aaaand the Grand Total is...:")]
+        [Display(Name = "Grand Total:")]
         private decimal totalCost;
 
         public decimal TotalCost

@@ -4,12 +4,12 @@
     ViewBag.Title = "Details";
 }
 
-<h2>myTicket Details</h2>
+<h2 class="view-title">myTicket</h2>
 
 <div>
-    <h4>myTickets Details</h4>
+    <h4 class="view-title">myTickets Details</h4>
     <hr />
-    <dl class="dl-horizontal">
+    <dl class="dl-horizontal detail-page">
         <dt>
             @Html.DisplayNameFor(model => model.TicketID)
         </dt>
@@ -27,35 +27,19 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Identification)
+            @Html.DisplayNameFor(model => model.TicketType)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Identification)
+            @Html.DisplayFor(model => model.TicketType)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.TravelTickets)
+            @Html.DisplayNameFor(model => model.TicketLink)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.TravelTickets)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ActivityTickets)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ActivityTickets)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Receipts)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Receipts)
+            @Html.DisplayFor(model => model.TicketLink)
         </dd>
 
     </dl>

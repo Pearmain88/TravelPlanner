@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace TravelPlanner.Data
 {
-    public enum TicketType { Identification, TravelTickets, Activity, Receipts }
+    public enum TicketType { Identification = 1, TravelTickets, Activity, Receipts }
 
     public class Ticket
     {
@@ -18,11 +18,15 @@ namespace TravelPlanner.Data
         public Guid OwnerID { get; set; }
 
         [Required]
+        [Display(Name ="Title")]
         public string TicketTitle { get; set; }
 
-        public string Identification { get; set; }
-        public string TravelTickets { get; set; }
-        public string ActivityTickets { get; set; }
-        public string Receipts { get; set; }
+        [Display(Name ="Type")]
+        public TicketType TicketType { get; set; }
+
+        [Display(Name ="Link")]
+        public string TicketLink { get; set; }
+
+
     }
 }

@@ -12,24 +12,23 @@ namespace TravelPlanner.Models
         public int BudgetID { get; set; }
 
         [Required]
-        [Display(Name ="What I'm Planning For: \n" +
-            "(ie: My First Trip To Rome)")]
+        [Display(Name ="Budget for:")]
         [MinLength(2, ErrorMessage ="Must be at least 2 Characters")]
         public string BudgetTitle { get; set; }
 
-        [Display(Name = "How I'm getting there:")]
+        [Display(Name = "Travel Cost:")]
         public decimal Transportation { get; set; }
 
-        [Display(Name = "Where I'm sleeping:")]
+        [Display(Name = "Lodging Cost:")]
         public decimal Lodging { get; set; }
 
-        [Display(Name = "How much for what I'm eating:")]
+        [Display(Name = "Food Cost:")]
         public decimal FoodCost { get; set; }
 
-        [Display(Name = "How much for Activities and Tours:")]
+        [Display(Name = "Activity Cost:")]
         public decimal Activities { get; set; }
 
-        [Display(Name = "How much on Gifts and Souvenirs:")]
+        [Display(Name = "Other:")]
         public decimal Souvenirs { get; set; }
 
         public override string ToString() => BudgetTitle;

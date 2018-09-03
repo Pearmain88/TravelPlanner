@@ -2,13 +2,14 @@
     padding-top: 50px;
     padding-bottom: 20px;
     background-color: lavenderblush;
+    background-image: url(../Resources/planning.jpeg);
+    background-size: cover;
     font-family: 'Book Antiqua';
 }
-
 /* Set padding to keep content from hitting the edges */
 .body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 1px;
+    padding-right: 1px;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -23,13 +24,60 @@ input,
 select,
 textarea {
     max-width: 280px;
-    min-width: 280px;
+    min-width: 140px;
 }
 .navbar {
-    background-color: darkslateblue;
-    
+    background-color: darkslateblue;    
 }
 .jumbotron {
-    background-color: deepskyblue; 
+    background-color: transparent;
+    color: white;
+    text-shadow: 2px 2px 2px black;
 }
-
+.hpb {
+    color: lavender;
+}
+.hpbox {
+    background-color: teal;
+    color: white;
+    text-shadow: 2px 2px 1px black;
+}
+#tripbox {
+    background-image: url(../Resources/doorway2.jpg);
+    background-size: 100%, 100%;
+}
+#budgbox {
+    background-image:url(../Resources/money2.jpeg);
+    background-size: cover;
+}
+#itinbox {
+    background-image: url(../Resources/tourists2.jpg);
+    background-size: 100%, 100%;
+}
+#tickbox {
+    background-image: url(../Resources/map-compass3.jpeg);
+    background-size: 100%, 100%;
+}
+.table {
+    color: black;
+    text-shadow: 1px 1px 1px darkgrey;
+    background-color: antiquewhite;
+}
+.form-horizontal {
+    color: white;
+    text-shadow: 1px 1px 1px black;
+}
+.view-title {
+    color: white;
+    text-shadow: 2px 2px 1px black;
+}
+.drop-down {
+    color: black;
+}
+dl-horizontal {
+    background-color: antiquewhite;
+}
+.detail-page {
+    background-color: antiquewhite;
+    
+}

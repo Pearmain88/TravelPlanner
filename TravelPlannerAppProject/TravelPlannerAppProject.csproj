@@ -202,6 +202,11 @@
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="picture.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>picture.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -218,6 +223,23 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\img01.jpg" />
+    <None Include="Resources\woman-on-wall.jpeg" />
+    <None Include="Resources\castle.jpg" />
+    <None Include="Resources\doorway.jpg" />
+    <None Include="Resources\cool_building.jpeg" />
+    <None Include="Resources\planning.jpeg" />
+    <None Include="Resources\China.jpg" />
+    <None Include="Resources\moey.jpeg" />
+    <None Include="Resources\minibus.jpeg" />
+    <None Include="Resources\tourists.jpg" />
+    <None Include="Resources\BWpath.jpg" />
+    <None Include="Resources\map-compass.jpeg" />
+    <None Include="Resources\map-compass3.jpeg" />
+    <None Include="Resources\woman-on-wall2.jpeg" />
+    <None Include="Resources\doorway2.jpg" />
+    <None Include="Resources\money2.jpeg" />
+    <None Include="Resources\tourists2.jpg" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -351,6 +373,12 @@
       <Project>{32f37c8f-3528-482e-a531-d587a0cb67c7}</Project>
       <Name>TravelPlanner.Services</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="picture.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>picture.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -61,10 +61,8 @@ namespace TravelPlannerAppProject.Controllers
                 {
                     TicketID = detail.TicketID,
                     TicketTitle = detail.TicketTitle,
-                    Identification = detail.Identification,
-                    TravelTickets = detail.TravelTickets,
-                    ActivityTickets = detail.ActivityTickets,
-                    Receipts = detail.Receipts
+                    TicketType = detail.TicketType,
+                    TicketLink = detail.TicketLink
                 };
             return View(model);
         }

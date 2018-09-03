@@ -4,19 +4,13 @@
     ViewBag.Title = "Index";
 }
 
-<h2>myItinerary</h2>
+<h2 class="view-title">myItinerary</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.ItineraryID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Completed)
-        </th>
         <th>
             @Html.DisplayNameFor(model => model.ActivityName)
         </th>
@@ -32,17 +26,14 @@
         <th>
             @Html.DisplayNameFor(model => model.ActivityDate)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Completed)
+        </th>
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.ItineraryID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Completed)
-        </td>
         <td>
             @Html.DisplayFor(modelItem => item.ActivityName)
         </td>
@@ -57,6 +48,9 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.ActivityDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Completed)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ItineraryID }) |

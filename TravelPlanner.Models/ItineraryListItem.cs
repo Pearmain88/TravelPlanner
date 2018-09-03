@@ -12,25 +12,26 @@ namespace TravelPlanner.Models
     {
         public int ItineraryID { get; set; }
 
+        [Display(Name ="Completed:")]
         public bool Completed { get; set; }
 
         [Required]
-        [Display(Name="What's happening:")]
+        [Display(Name="Activity Name:")]
         [MinLength(1, ErrorMessage ="Please fill in the activity name.")]
         public string ActivityName { get; set; }
 
         [Required]
-        [Display(Name ="What's going to happen")]
+        [Display(Name ="Description:")]
         [MaxLength(3000, ErrorMessage ="Leave something to the imagination.")]
         public string ActivityDescription { get; set; }
 
+        [Display(Name ="Type:")]
         public ActivityType Type { get; set; }
 
-        [Display(Name ="How much is this going to cost? \n" +
-            "Be sure to round up if there's a gift shop!")]
+        [Display(Name ="Cost:")]
         public decimal? ActivityCost { get; set; }
 
-        [Display(Name ="When is this going to happen?")]
+        [Display(Name ="Date:")]
         public DateTimeOffset? ActivityDate { get; set; }
 
 

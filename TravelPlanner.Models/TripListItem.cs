@@ -11,13 +11,13 @@ namespace TravelPlanner.Models
     {
         public int TripID { get; set; }
 
-        [Display(Name="Where I Want To Be:")]
+        [Display(Name="Place I'm Going:")]
         public string TripName { get; set; }
 
-        [Display(Name ="When I Want To Be There:")]
+        [Display(Name ="Departure Date:")]
         public DateTimeOffset? DepartDate { get; set; }
 
-        [Display(Name ="When I'm Coming Home:")]
+        [Display(Name ="Return Date:")]
         public DateTimeOffset? ReturnDate { get; set; }
 
         public override string ToString() => TripName;

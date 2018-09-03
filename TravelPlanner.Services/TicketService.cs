@@ -26,10 +26,8 @@ namespace TravelPlanner.Services
                 {
                     OwnerID = _userID,
                     TicketTitle = model.TicketTitle,
-                    Identification = model.Identification,
-                    TravelTickets = model.TravelTickets,
-                    ActivityTickets = model.ActivityTickets,
-                    Receipts = model.Receipts
+                    TicketType = model.TicketType,
+                    TicketLink = model.TicketLink
                 };
             using (var ctx = new ApplicationDbContext())
             {
@@ -52,10 +50,8 @@ namespace TravelPlanner.Services
                     {
                         TicketID = entity.TicketID,
                         TicketTitle = entity.TicketTitle,
-                        Identification = entity.Identification,
-                        TravelTickets = entity.TravelTickets,
-                        ActivityTickets = entity.ActivityTickets,
-                        Receipts = entity.Receipts
+                        TicketType = entity.TicketType,
+                        TicketLink = entity.TicketLink
                     };
             }
         }
@@ -73,10 +69,9 @@ namespace TravelPlanner.Services
                                 new TicketListItem
                                 {
                                     TicketID = e.TicketID,
-                                    Identification = e.Identification,
-                                    TravelTickets = e.TravelTickets,
-                                    ActivityTickets = e.ActivityTickets,
-                                    Receipts = e.Receipts
+                                    TicketTitle = e.TicketTitle,
+                                    TicketType = e.TicketType,
+                                    TicketLink = e.TicketLink
                                 }
                         );
                 return query.ToArray();
@@ -94,10 +89,8 @@ namespace TravelPlanner.Services
 
                 entity.TicketID = model.TicketID;
                 entity.TicketTitle = model.TicketTitle;
-                entity.Identification = model.Identification;
-                entity.TravelTickets = model.TravelTickets;
-                entity.ActivityTickets = model.ActivityTickets;
-                entity.Receipts = model.Receipts;
+                entity.TicketType = model.TicketType;
+                entity.TicketLink = model.TicketLink;
 
                 return ctx.SaveChanges() == 1;
             }

@@ -11,13 +11,13 @@ namespace TravelPlanner.Data
     {
         public int TripID { get; set; }
 
-        [Display(Name="Where I want to be:")]
+        [Display(Name="Place I'm Going:")]
         public string TripName { get; set; }
 
-        [Display(Name ="When I want to be there:")]
+        [Display(Name ="Departure Date:")]
         public DateTimeOffset? DepartDate { get; set; }
 
-        [Display(Name ="When I'm coming home:")]
+        [Display(Name ="Return Date:")]
         public DateTimeOffset? ReturnDate { get; set; }
 
     }

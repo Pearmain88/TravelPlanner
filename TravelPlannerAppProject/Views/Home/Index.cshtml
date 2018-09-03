@@ -1,28 +1,28 @@
 ﻿<div class="jumbotron">
     <h1>Welcome</h1>
-    <p class="lead">To an easy way to organize your next adventure</p>
-    <p></p>
+    <h2>To your Travel Planner</h2>
+    <h4>An easy way to plan you next Adventure</h4>
 </div>
 
 <div class="row">
-    <div class="col-md-3">
+    <div class="col-md-3 hpbox" id="tripbox">
         <h2>myTrips</h2>
         <p>Im going to put something here eventually</p>
-        <p><a class="btn hpb" href="Link goes here">To myTrips &rArr;</a></p>
+        <p><a class="btn hpb" @Html.ActionLink("To myTrips", "Index", "Trip")></a></p>
     </div>
-    <div class="col-md-3">
+    <div class=" col-md-3 hpbox" id="budgbox">
         <h2>myBudget</h2>
         <p>Im going to put something here eventually</p>
-        <p><a class="btn hpb" href="Link goes here">To myBudget &rArr;</a></p>
+        <p><a class="btn hpb" @Html.ActionLink("To myBudget", "Index", "Budget")></a></p>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-3 hpbox" id="itinbox">
         <h2>myItinerary</h2>
         <p>Im going to put something here eventually</p>
-        <p><a class="btn hpb" href="Link goes here">To myItinerary &rArr;</a> </p>
+        <p><a class="btn hpb" @Html.ActionLink("To myItinerary", "Index", "Itinerary")></a> </p>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-3 hpbox" id="tickbox">
         <h2>myTickets</h2>
         <p>Im going to put something here eventually</p>
-        <p><a class="btn hpb" href="Link goes here">To myTickets &rArr;</a></p>
+        <p><a class="btn hpb" @Html.ActionLink("To myTickets", "Index", "Ticket")></a></p>
     </div>
 </div>

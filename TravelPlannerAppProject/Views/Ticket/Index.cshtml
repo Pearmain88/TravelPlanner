@@ -4,7 +4,7 @@
     ViewBag.Title = "Index";
 }
 
-<h2>myTickets</h2>
+<h2 class="view-title">myTicket</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -12,39 +12,26 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.TicketID)
+            @Html.DisplayNameFor(model => model.TicketTitle)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Identification)
+            @Html.DisplayNameFor(model => model.TicketType)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.TravelTickets)
+            @Html.DisplayNameFor(model => model.TicketLink)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ActivityTickets)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Receipts)
-        </th>
-        <th></th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.TicketID)
+            @Html.DisplayFor(modelItem => item.TicketTitle)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Identification)
+            @Html.DisplayFor(modelItem => item.TicketType)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.TravelTickets)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ActivityTickets)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Receipts)
+            @Html.DisplayFor(modelItem => item.TicketLink)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.TicketID }) |
